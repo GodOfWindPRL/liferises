@@ -1,8 +1,9 @@
 import styled from 'styled-components'
+import bgBanner from "assets/images/bg-banner.png"
 
 const Banner = () => {
     return <Wrap>
-        <img src="" alt="" />
+        <img src={bgBanner} alt="" className='banner-bg'/>
     </Wrap>
 
 }
@@ -10,10 +11,12 @@ const Banner = () => {
 export default Banner
 const Wrap = styled.div`
     width: 100%;
-    height: auto;
+    height: fit-content;
     display: flex;
-    img {
+    position: relative;
+    /* height: 54.17vw; */
+    .banner-bg {
         width: 100%;
-        height: auto;
+        height: 100%;
     }
 `

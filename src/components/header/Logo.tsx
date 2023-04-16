@@ -16,39 +16,28 @@ const Logo = () => {
 export default Logo
 
 const Wrap = styled.div`
-    width: 48px;
-    height: 48px;
+    width: 292px;
+    height: 60px;
     cursor: pointer;
     border-radius: 50%;
+    margin-right: auto;
+    display: flex;
     .logo {
         width: 100%;
-        height: 100%;
+        height: 60px;
+        position: relative;
         > img {
+            position: absolute;
+            top: 50%;
+            left: 0;
             width: 100%;
-            height: 100%;
-        }
-    }
-    &:hover {
-        animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-        0% {
-            -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
-            box-shadow: 0 0 0 0 #fe8c0038, inset 0 0 0 #fe8c0038;
-            /* box-shadow: inset 0 0 10px #f8a100; */
-        }
-        50% {
-            -moz-box-shadow: 0 0 0 20px rgba(204,169,44, 0);
-            box-shadow: 0 0 20px 10px #fe8c0038, inset 0 0 40px #fe8c0038;
-        }
-        100% {
-            -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-            box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+            height: auto;
+            transform: translateY(-50%);
         }
     }
     ${breakpointsMedias.min1200} {
-        width: 90px;
-        height: 90px;
+        /* width: 90px;
+        height: 90px; */
         margin-right: 22px;
     }
 `

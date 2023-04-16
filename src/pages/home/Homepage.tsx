@@ -18,8 +18,6 @@ import Feature from 'pages/Feature'
 import TokenMetric from 'pages/TokenMetric'
 
 const Homepage = () => {
-    const { width } = useWidthScreen()
-    const { t } = useTranslation();
 
     return (<Wrap>
         <Banner />

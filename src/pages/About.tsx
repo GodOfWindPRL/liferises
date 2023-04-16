@@ -1,11 +1,25 @@
 import styled from 'styled-components'
+import bgAbout from "assets/images/bg-about.png"
+import titleLeft from "assets/images/title-left.png"
+import titleRight from "assets/images/title-right.png"
+import titleAbout from "assets/images/title-about.png"
+import frameAbout from "assets/images/frame-about.png"
 
 const About = () => {
     return <Wrap>
         <div className="hp-title">
-            <img src="" alt="" className='hpt-side' />
-            <img src="" alt="" className='hpt-text' />
-            <img src="" alt="" />
+            <div className='hpt-side'>
+                <img src={titleLeft} alt="" />
+            </div>
+            <div className='hpt-text' >
+                <img src={titleAbout} alt="" />
+            </div>
+            <div className='hpt-side'>
+                <img src={titleRight} alt="" />
+            </div>
+
+
+
         </div>
         <div className="container">
             <div className="about-video">
@@ -33,6 +47,8 @@ const Wrap = styled.div`
     position: relative;
     justify-content: center;
     align-items: center;
+    background-image: url(${bgAbout});
+    background-size: cover;
     .hp-title {
         position: absolute;
         top: 0;
@@ -46,9 +62,17 @@ const Wrap = styled.div`
            width: 25.73%;
            height: auto;
            margin: 0 12px;
+            > img {
+                    width: 100%;
+                    height: auto;
+            }
         }
         .hpt-side {
             flex: 1;
+            > img {
+                width: 100%;
+                height: auto;
+            }
         }
     }
     .container {
@@ -78,14 +102,17 @@ const Wrap = styled.div`
             }
         }
         .about-text {
-            flex: 1;
+            width: 527px;
+            height: 655px;
             margin-left: 40px;
             display: flex;
             flex-direction: column;
-            background-image: url();
+            background-image: url(${frameAbout});
             background-size: 100% auto;
             background-position: top center;
             padding: 0 73px;
+            justify-content: center;
+            text-align: center;
         }
     }
 `

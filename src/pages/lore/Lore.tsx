@@ -1,7 +1,4 @@
-import bgLore from 'assets/images/bg-lore.png'
-import bgLore2 from 'assets/images/bg-lore-2.png'
-import imgMeo from 'assets/images/lore-meo.png'
-import imgMeo2 from 'assets/images/lore-meo-2.png'
+
 import styled from 'styled-components'
 import { breakpointsMedias } from 'configs/breakpoints'
 import { useTranslation } from 'react-i18next'
@@ -54,7 +51,6 @@ export default Lore
 const Wrap = styled.div`
     width: 100%;
     min-height: 100vh;
-    background-image: url(${bgLore});
     background-size: cover;
     background-position: center center;
     display: flex;
@@ -127,7 +123,6 @@ const Wrap = styled.div`
         bottom: 0;
         width: 100%;
         height: 30vh;
-        background-image: url(${imgMeo});
         background-position: center center;
         background-size: auto 110%;
         background-repeat: no-repeat;
@@ -176,7 +171,6 @@ const Wrap = styled.div`
     }
     ${breakpointsMedias.min1200} {
         margin-top: -140px;
-        background-image: url(${bgLore2});
         /* padding-top: 172px; */
         padding-top: 142px;
         flex-direction: row;
@@ -225,7 +219,6 @@ const Wrap = styled.div`
             width: 50%;
             height: 83vh;
             z-index: 0;
-            background-image: url(${imgMeo2});
             background-position: right bottom;
             background-size: auto 100%;
             background-repeat: no-repeat;

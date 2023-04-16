@@ -1,15 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
-import bgMenu from 'assets/images/bee-net.png'
-import ballLight from 'assets/images/ball-light.png'
-import iconDiscord from 'assets/images/icon-discord.png'
-import iconInsta from 'assets/images/icon-instagram.png'
-import iconTwitter from 'assets/images/icon-twitter.png'
-import iconOpensea from 'assets/images/icon-opensea.png'
-import iconDiscord2 from 'assets/images/icon-discord.svg'
-import iconInsta2 from 'assets/images/icon-instagram.svg'
-import iconTwitter2 from 'assets/images/icon-twitter.svg'
-import iconOpensea2 from 'assets/images/icon-opensea.svg'
+import discordBt from 'assets/images/discord-bt.png'
+import bgLink from 'assets/images/bg-link.png'
 import { useTranslation } from 'react-i18next';
 import configColor from 'configs/configColor';
 import { breakpointsMedias } from 'configs/breakpoints'
@@ -20,89 +12,64 @@ interface IMenu {
 
 export const MENU_LIST = [
     {
-        text: "lore",
-        link: "/lore",
+        text: "story",
+        link: "",
+        hasBg: true
     },
     {
-        text: "team",
-        link: "/team",
+        text: "marketplace",
+        link: "",
     },
     {
-        text: "gallery",
-        link: "/gallery",
+        text: "tokenMetric",
+        link: "",
     },
     {
-        text: "faqs",
-        link: "/faqs",
+        text: "roadmap",
+        link: "",
+    },
+    {
+        text: "documents",
+        link: "",
     }
 ];
-export const SOCIAL_LIST = [
-    {
-        text: "twitter",
-        link: "https://twitter.com/TheMeoNFT",
-        icon: iconTwitter,
-        icon2: iconTwitter2,
-    },
-    {
-        text: "discord",
-        link: "https://discord.gg/themeo",
-        icon: iconDiscord,
-        icon2: iconDiscord2,
-    },
-    {
-        text: "instagram",
-        link: "/",
-        icon: iconInsta,
-        icon2: iconInsta2,
-    },
-    {
-        text: "opensea",
-        link: "/",
-        icon: iconOpensea,
-        icon2: iconOpensea2,
-    },
-];
+
+
 
 const Menu = ({ onClose }: IMenu) => {
     const { pathname } = useLocation();
     const { t } = useTranslation()
+    console.log(pathname.split("/")[1] === "")
+
     return (
         <Wrap >
             <div className="bg-net"></div>
-            <img src={ballLight} alt="" className='bg-light' />
+            {/* <img src={ballLight} alt="" className='bg-light' /> */}
             <div className={`menu-list`}>
                 {
                     MENU_LIST.map((item, index) =>
                         <Link to={item.link}
                             key={index}
-                            className={`menu-item ${pathname.split("/")[1] === item.text ? "menu-item-active" : ""}`}
+                            className={`menu-item ${(pathname.split("/")[1] === item.link && item.hasBg) ? "menu-item-active" : ""}`}
                             onClick={() => {
                                 onClose()
                             }}
                         >
-                            <span className={`${pathname.split("/")[1] === item.text ? "text-gradient-orange" : ""} size-4`}>{t(item.text)}</span>
-                            <div className="mi-border"></div>
+                            <span className={`${(pathname.split("/")[1] === item.link && item.hasBg) ? "color-golden" : "color-gray"} size-4`}>{t(item.text)}</span>
                         </Link>)
                 }
-                {
-                    SOCIAL_LIST.map((item, index) =>
-                        <a href={item.link}
-                            key={index}
-                            target="_blank" rel="noreferrer"
-                            className={`menu-item social-item`}
-                            onClick={() => {
-                                onClose()
-                            }}
-                        >
-                            <span className={`size-4`}>{t(item.text)}
-                                <div className="mi-icon">
-                                    <img src={item.icon} alt="" />
-                                </div>
-                            </span>
-                            <SocicalItem className="mi-icon-big" active={item.icon2} />
-                            <div className="mi-border"></div>
-                        </a>)
-                }
+
+                <a href={""}
+                    target="_blank" rel="noreferrer"
+                    className={`social-item`}
+                    onClick={() => {
+                        onClose()
+                    }}
+                >
+                    <img src={discordBt} alt="" className='bg-social' />
+                    <span className={`size-0`}>{t("joinDiscord")}</span>
+                </a>
+
             </div>
         </Wrap>
     )
@@ -118,7 +85,6 @@ const Wrap = styled.div`
     background-color: #000000;
     position: relative;
     .bg-net {
-        background-image: url(${bgMenu});
         height: 100%;
         position: absolute;
         width: 100%;
@@ -134,46 +100,23 @@ const Wrap = styled.div`
         width: 100%;
         padding: 72px 18px 14px 14px;
         z-index: 0;
+        height: 100%;
         .menu-item {
-            margin-bottom: 16px;
             cursor: pointer;
-            color: ${configColor.lightWhite};
             display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            text-transform: uppercase;
-            > span {
-                display: flex;
-                align-items: center;
-            }
-            .mi-icon {
-                width: 24px;
-                height: 24px;
-                display: flex;
-                margin-left: 12px;
-                > img {
-                    object-fit: contain;
-                }
-            }
-            .mi-icon-big {
-                display: none;
-            }
-            .mi-border {
-                width: 100%;
-                height: 1px;
-                background: #8282825e;
-                margin-top: 16px;
-            }
-            &:hover{
-                .mi-border {
-                    background: #E6E6E6;
+            align-items: center;
+            height: 100%;
+            &:hover {
+                > span {
+                    color: #E2C080;
+                    mix-blend-mode: normal;
+                    text-shadow: 0px 0px 8px rgba(221, 207, 167, 0.6), 0px 4px 12px #000000;
                 }
             }
         }
         .menu-item-active {
-            .mi-border {
-                background: linear-gradient(135deg, #FE8C00 0%, #F83600 100%) !important;
-            }
+            background-image:url(${bgLink});
+            background-size: 100% 100%;
         }
     }
     ${breakpointsMedias.min768} {
@@ -190,56 +133,40 @@ const Wrap = styled.div`
             align-items: center;
             padding: 0;
             .menu-item {
-                margin-bottom: 0;
-                margin: 0 16px;
-                > span {
-                    font-size: 16px;
-                    line-height: 20px;
-                }
-                .mi-border {
-                    display: none;
-                }
+                padding: 0 20px;
             }
             .social-item {
                 margin: 0;
-                margin-left: 20px;
-                > span {
-                    display: none;
-                }
-                .mi-icon-big {
-                    display: flex;
-                    width: 30px;
-                    height: 30px;
-                    > img {
-                       object-fit: contain;
-                    }
-                }
-                &:nth-child(5) {
-                    margin-left: auto;
-                }
-                &:last-child {
-                    margin-right: 6px;
-                }
             }
         }
     }
     ${breakpointsMedias.min1200} {
         .menu-list {
             .menu-item {
-                margin: 0 25px;
-                > span {
-                    font-size: 20px;
-                    line-height: 25px;
-                }
+                padding: 0 30px;
             }
             .social-item {
-                margin-left: 32px;
-                .mi-icon-big {
-                    width: 60px;
-                    height: 60px;
-                    > img {
-                        transition: 0.5s;
-                    }
+                width: 120px;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                .bg-social {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: auto;
+                    z-index: 0;
+                }
+                > span {
+                    margin-top: 74px;
+                    text-align: center;
+                    color: #000000;
+                    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
+                    line-height: 20px;
+                    z-index: 1;
                 }
             }
         }
