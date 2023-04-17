@@ -10,29 +10,18 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: transparent;
     /* background-color: ${configColor.bgPrimary}; */
-    font-size:14px;
-    line-height:1.254;
-    letter-spacing: 0.15px;
-    font-family: 'Orbitron', sans-serif;
   }
   .container {
     width: 100%;
-    padding: 0 16px;
+    padding: 0 80px;
     max-width: 1320px;
   }
   ${breakpointsMedias.max1199}{
       .container {
-        
+        padding: 0 40px;
       }
   }
   ${breakpointsMedia.largeDesktop}{
-        :root {
-          font-size:20px;
-          letter-spacing: 0;
-        }
-        body {
-          font-size:20px;
-          letter-spacing: 0;
-        }
+       
     }
 `;

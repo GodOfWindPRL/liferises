@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import LoadingSpinner from './LoadingSpinner';
 import configColor from 'configs/configColor';
 import { breakpointsMedias } from 'configs/breakpoints';
+import bgBt from "assets/images/bg-bt.png"
 
 interface IB extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     text: string,
@@ -17,7 +18,7 @@ const Button = ({ text, isLoading = false, sizeBt = "normal", className, disable
     const { t } = useTranslation();
     return (
         <Wrap className={`${isLoading ? "bt-loading" : ""} bt-${sizeBt} ${className} style-${variant}`} disabled={disabled || isLoading} {...props}>
-            <span className={`color-black size-1`}>{!!isLoading ? <LoadingSpinner />
+            <span className={`color-golden size-0`}>{!!isLoading ? <LoadingSpinner />
                 : <>
                     {t(text)}
                 </>}</span>
@@ -32,36 +33,22 @@ const Wrap = styled.button`
     padding: 0 12px;
     height: 36px;
     border-radius: 10px;
-    background: ${configColor.colorPrimary};
-    border: 1px solid ${configColor.colorPrimary};
-    &.style-border{
-        background: none;
-        border: 1px solid ${configColor.colorPrimary};
-        > span {
-            color: ${configColor.colorPrimary};
-        }
-        /* :active,
-        :focus, */
-        :hover {
-            background: ${configColor.colorPrimary};
-            border: 1px solid ${configColor.colorPrimary};
-            > span {
-                color: ${configColor.colorBG};
-            }
-        }
-    }
+    background-image: url(${bgBt});
+    background-size: 100% 100%;
     &.bt-small {
         height: 28px;
         border-radius: 6px;
         padding: 0 7px;
         min-width: 68px;
     }
+    > span {
+        transition: 0.3s;
+    }
     /* &:active,
     &:focus, */
     &:hover {
-        background: none;
         > span {
-            color: ${configColor.colorPrimary};
+            text-shadow: 0px 0px 32px rgb(221, 207, 167), 0px 8px 24px #7c7373;
         }
     }
     cursor: pointer;

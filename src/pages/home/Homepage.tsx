@@ -16,6 +16,9 @@ import Story from 'pages/Story'
 import Character from 'pages/Character'
 import Feature from 'pages/Feature'
 import TokenMetric from 'pages/TokenMetric'
+import asBg from 'assets/images/as-bg.png'
+import Roadmap from 'pages/Roadmap'
+import Team from 'pages/Team'
 
 const Homepage = () => {
 
@@ -26,6 +29,8 @@ const Homepage = () => {
         <Character />
         <Feature />
         <TokenMetric />
+        <Roadmap />
+        <Team />
     </Wrap>)
 }
 
@@ -35,6 +40,10 @@ const Wrap = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
+    background-image: url(${asBg});
+    background-size: 17% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     ${breakpointsMedias.min768} {
     }
 `

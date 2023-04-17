@@ -156,6 +156,7 @@ textarea {
   line-height: 1.15;
   /* 1 */
   margin: 0;
+
   /* 2 */
 }
 
@@ -168,6 +169,7 @@ button,
 input {
   /* 1 */
   overflow: visible;
+
 }
 
 /**
@@ -213,6 +215,14 @@ button:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
+}
+
+button,
+button:active,
+button:focus{
+  border: none;
+  outline: none;
+  background: none;
 }
 
 /**
@@ -401,23 +411,7 @@ template {
   font-style: normal;
   font-weight: 400;
   font-size: 50px;
-  line-height: 68px;
-}
-
-.size-3 {
-  font-family: "BlaakBold";
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 23px;
-  font-style: normal;
-}
-
-.size-4 {
-  font-family: "BlaakBold";
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 30px;
-  font-style: normal;
+  line-height: 100%;
 }
 
 .text-uppercase {

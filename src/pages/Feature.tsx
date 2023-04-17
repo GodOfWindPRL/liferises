@@ -1,5 +1,10 @@
-import Button from 'components/core/Button'
 import styled from 'styled-components'
+import titleLeft from "assets/images/title-left.png"
+import titleRight from "assets/images/title-right.png"
+import titleFeature from "assets/images/title-feature.png"
+import frameFeature from "assets/images/frame-feature.png"
+import iconFeature from "assets/images/feature-icon.png"
+import { breakpointsMedias } from 'configs/breakpoints'
 
 const Feature = () => {
     const dataFeature = [{
@@ -18,13 +23,19 @@ const Feature = () => {
 
     return <Wrap>
         <div className="hp-title">
-            <img src="" alt="" className='hpt-side' />
-            <img src="" alt="" className='hpt-text' />
-            <img src="" alt="" />
+            <div className='hpt-side'>
+                <img src={titleLeft} alt="" />
+            </div>
+            <div className='hpt-text' >
+                <img src={titleFeature} alt="" />
+            </div>
+            <div className='hpt-side'>
+                <img src={titleRight} alt="" />
+            </div>
         </div>
         <div className="container">
             {dataFeature.map((item, index) => <div key={index} className="fe-item">
-                <img src="" alt="" />
+                <img src={iconFeature} alt="" />
                 <span className='size-1 color-golden fi-text-1'>{item.title}</span>
                 <span className='size-0 color-gold'>{item.text}</span>
             </div>)}
@@ -55,15 +66,24 @@ const Wrap = styled.div`
            width: 25.73%;
            height: auto;
            margin: 0 12px;
+            > img {
+                    width: 100%;
+                    height: auto;
+            }
         }
         .hpt-side {
             flex: 1;
+            > img {
+                width: 100%;
+                height: auto;
+            }
         }
     }
     .container {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        max-width: unset;
         .fe-item {
             width: 300px;
             height: 455px;
@@ -73,6 +93,8 @@ const Wrap = styled.div`
             display: flex;
             flex-direction: column;
             align-items: center;
+            background-image: url(${frameFeature});
+            background-size: 100% 100%;
             &:last-child {
                 margin-right: 0;
             }
@@ -91,5 +113,20 @@ const Wrap = styled.div`
                 margin-bottom: 12px;
             }
         }
+
+    }
+    ${breakpointsMedias.max1540}{
+        .container {
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            .fe-item {
+                margin: 0 10% 30px 10%;
+                &:last-child {
+                    margin: 0 10% 30px 10%;
+                }
+            }
+        }
+       
     }
 `
