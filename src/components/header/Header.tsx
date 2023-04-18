@@ -53,6 +53,7 @@ const Wrap = styled.div`
         width: 100%;
         height: 100%;
         z-index: 1;
+       
     }
     .menu-mobile {
         position: fixed;
@@ -95,6 +96,8 @@ const Wrap = styled.div`
         }
         .wrap-header {
             padding: 0 28px;
+            max-width: 1300px;
+            margin: 0 auto;
             .menu {
                 flex: 1;
                 height: 100%;
@@ -111,6 +114,8 @@ const Wrap = styled.div`
         }
         .wrap-header {
             padding: 0 40px;
+            max-width: 1500px;
+            margin: 0 auto;
             .menu {
                 flex: 1;
                 height: 100%;
