@@ -21,7 +21,9 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0 40px;
       }
   }
-  ${breakpointsMedia.largeDesktop}{
-       
-    }
+  ${breakpointsMedias.max767}{
+      .container {
+        padding: 0 16px;
+      }
+  }
 `;

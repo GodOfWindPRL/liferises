@@ -157,6 +157,7 @@ const Wrap = styled.div`
                 width: fit-content;
                 margin-left: -10px;
                 font-family: "Exemplar";
+                line-height: 100%;
             }
             ul {
                 width: 100%;
@@ -218,6 +219,7 @@ const Wrap = styled.div`
         .container {
             margin-bottom: 0;
             flex-direction: column;
+            padding: 0 28px;
             .fe-item {
                 width: 100%;
                 padding: 0 0 58px 32px;

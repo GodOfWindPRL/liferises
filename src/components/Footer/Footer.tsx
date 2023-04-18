@@ -9,6 +9,7 @@ import iconInsta2 from 'assets/images/icon-instagram.svg'
 import iconTwitter2 from 'assets/images/icon-twitter.svg'
 import iconOpensea2 from 'assets/images/icon-opensea.svg'
 import bgFooter from 'assets/images/bg-footer.png'
+import barFooter2 from 'assets/images/bar-footer-2.png'
 
 export const SOCIAL_LIST = [
     {
@@ -190,6 +191,7 @@ const Wrap = styled.div`
         background: #0C0C0C;
         .container {
             flex-direction: column;
+            padding: 0 16px
         }
         .bg-footer {
             height: 300px;
@@ -200,6 +202,9 @@ const Wrap = styled.div`
         }
         .bar-footer {
             width: 90%;
+            > img {
+                content: url(${barFooter2});
+            }
         }
         .footer-logo {
             z-index: 1;
