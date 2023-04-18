@@ -16,12 +16,13 @@ const Wrap = styled.div`
     height: fit-content;
     display: flex;
     position: relative;
-    /* height: 54.17vw; */
+    min-height: 54.16vw;
     .banner-bg {
         width: 100%;
         height: 100%;
     }
     ${breakpointsMedias.max767} {
+        min-height: 143vw;
         .banner-bg {
             content: url(${bgBanner2});
         }

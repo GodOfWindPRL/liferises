@@ -27,8 +27,20 @@ const zoomAnimation = keyframes`
 `
 const Wrap = styled.div`
     position: fixed;
-    top: 50%;
+    /* top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%); */
     animation: ${zoomAnimation} 0.5s ease-in-out infinite both;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    width: 100%;
+    height: 100%;
+    background: #1E1E1E;
+    img {
+      width: 50vw;
+      height: auto;
+    }
 `

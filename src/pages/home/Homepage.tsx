@@ -19,6 +19,7 @@ import TokenMetric from 'pages/TokenMetric'
 import asBg from 'assets/images/as-bg.png'
 import Roadmap from 'pages/Roadmap'
 import Team from 'pages/Team'
+import Footer from 'components/Footer/Footer'
 
 const Homepage = () => {
 
@@ -31,6 +32,7 @@ const Homepage = () => {
         <TokenMetric />
         <Roadmap />
         <Team />
+        <Footer />
     </Wrap>)
 }
 
@@ -45,6 +47,8 @@ const Wrap = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     margin-top: 60px;
+    min-height: 100%;
+    background-color: #1E1E1E;
     ${breakpointsMedias.min1200} {
         margin-top: 0;
     }
