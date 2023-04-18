@@ -90,7 +90,7 @@ const Wrap = styled.div`
             top: 0;
             left: 0;
             width: 100%;
-            height: 132px;
+            height: 112px;
             content: url(${bgHeader});
         }
         .wrap-header {
@@ -105,7 +105,10 @@ const Wrap = styled.div`
         }
     }
     ${breakpointsMedias.min1600} {
-      
+        height: 100px;
+        .bg-header {
+            height: 132px;
+        }
         .wrap-header {
             padding: 0 40px;
             .menu {
