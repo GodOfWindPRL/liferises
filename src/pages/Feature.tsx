@@ -86,7 +86,7 @@ const Wrap = styled.div`
         display: flex;
         align-items: center;
         justify-content: space-between;
-        max-width: unset;
+        max-width: 1500px;
         .fe-item {
             width: 300px;
             height: 455px;
@@ -138,11 +138,12 @@ const Wrap = styled.div`
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
+            max-width: 1200px;
             .fe-item {
-                margin: 0 10% 30px 10%;
+                margin: 0 5% 30px 5%;
                 &:last-child {
-                    margin-right: 10%;
-                    margin: 0 10% 30px 10%;
+                    margin-right: 5%;
+                    margin: 0 5% 30px 5%;
                 }
                 &:nth-child(2n+2) {
 
@@ -228,7 +229,7 @@ const Wrap = styled.div`
                     width: 35vw;
                     height: 45.5vw;
                     margin: 0 2vw 30px 2vw;
-                    padding: 24% 20px 0 20px;
+                    padding: 23% 20px 0 20px;
                     &:last-child {
                         margin-right: 2vw;
                         margin: 0 2vw 30px 2vw;
@@ -239,7 +240,7 @@ const Wrap = styled.div`
                     max-width: 358px;
                     height: 82vw;
                     margin: 0 2vw 30px 2vw;
-                    padding: 50% 20px 0 20px;
+                    padding: 42% 20px 0 20px;
                     background-image: url(${frameFeature2});
                     &:last-child {
                         margin-right: 2vw;
