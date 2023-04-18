@@ -6,7 +6,7 @@ import { breakpointsMedias } from 'configs/breakpoints'
 
 const Story = () => {
     return <Wrap>
-        <div className="story">
+        <div className="story appear" >
             <img src={frameStory} alt="" />
             <div className="story-text">
                 <span className="size-3 color-golden">Game story</span>

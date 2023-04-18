@@ -29,7 +29,7 @@ const About = () => {
                 <img src={titleRight} alt="" />
             </div>
         </div>
-        <div className="container">
+        <div className="container appear">
             <div className="about-video">
                 <video src="" autoPlay muted={muted} playsInline loop poster={bgVideo}></video>
                 <img src={frameVideo} alt="" className='av-border' />

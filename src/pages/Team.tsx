@@ -103,7 +103,7 @@ const Team = () => {
             </div>
         </div>
         <div className="container">
-            {dataFeature.map((item, index) => <div key={index} className="fe-item">
+            {dataFeature.map((item, index) => <div key={index} className="fe-item appear">
                 <div className="fi-img">
                     <img src={item.img} alt="" />
                 </div>

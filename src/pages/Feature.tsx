@@ -37,7 +37,7 @@ const Feature = () => {
             </div>
         </div>
         <div className="container">
-            {dataFeature.map((item, index) => <div key={index} className="fe-item">
+            {dataFeature.map((item, index) => <div key={index} className="fe-item appear">
                 <img src={iconFeature} alt="" />
                 <span className='size-1 color-golden fi-text-1'>{item.title}</span>
                 <span className='size-0 color-gold'>{item.text}</span>

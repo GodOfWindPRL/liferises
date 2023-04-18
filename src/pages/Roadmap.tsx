@@ -33,12 +33,12 @@ const Roadmap = () => {
             "Launch Token sale"
         ]
     }, {
-        title: "Q1 - Q2.2024",
+        title: "2025",
         text: [
-            "Develop Crafting, Upgrade, Fusion system",
-            "Develop Building system",
-            "Develop Story & Quest system",
-            "Alpha Mobile platform"
+            "All NFT / Gem Launch",
+            "All NFT Pet and Guard Launch NFT Land Launch",
+            "Close Beta Launch",
+            "Official Game Launch"
         ]
     }, {
         title: "Q3 - Q4.2024",
@@ -48,14 +48,14 @@ const Roadmap = () => {
             "Pre - Close Beta (Pre-Testnet) Mobile platform"
         ]
     }, {
-        title: "2025",
+        title: "Q1 - Q2.2024",
         text: [
-            "All NFT / Gem Launch",
-            "All NFT Pet and Guard Launch NFT Land Launch",
-            "Close Beta Launch",
-            "Official Game Launch"
+            "Develop Crafting, Upgrade, Fusion system",
+            "Develop Building system",
+            "Develop Story & Quest system",
+            "Alpha Mobile platform"
         ]
-    }]
+    },]
 
     return <Wrap>
         <div className="hp-title">
@@ -70,7 +70,7 @@ const Roadmap = () => {
             </div>
         </div>
         <div className="container">
-            {dataFeature.map((item, index) => <div key={index} className="fe-item">
+            {dataFeature.map((item, index) => <div key={index} className="fe-item appear">
                 <img src={iconRoadmap} alt="" />
                 <span className='size-1 color-gold fi-text-1'>{item.title}</span>
                 <ul>
@@ -223,7 +223,7 @@ const Wrap = styled.div`
                 padding: 0 0 58px 32px;
                 border: none !important;
                 border-left: 1px solid #E2C080 !important;
-                &:last-child {
+                &:nth-child(4) {
                     border-left: none !important;
                 }
                 > img {
@@ -237,6 +237,16 @@ const Wrap = styled.div`
                 }
                 ul {
                     margin-left: 16px;
+                }
+                order: 1;
+                &:nth-child(6) {
+                    order: 2;
+                }
+                &:nth-child(5) {
+                    order: 3;
+                }
+                &:nth-child(4) {
+                    order: 4;
                 }
             }
         }

@@ -1,15 +1,5 @@
-import bgHomeMobile from 'assets/images/bg-home-mobile.png'
-import bgHome2 from 'assets/images/bg-home-2.png'
-import imgMute from 'assets/images/bt-mute.png'
-import imgMute2 from 'assets/images/bt-muted.png'
-import imgTextHome from 'assets/images/text-home.png'
 import styled from 'styled-components'
 import { breakpointsMedias } from 'configs/breakpoints'
-import videoMeo from 'assets/video/meo-video.webm'
-import videoMeo2 from 'assets/video/meo-video-2.mp4'
-import { useWidthScreen } from 'helpers/hooks/useScreen'
-import { useTranslation } from 'react-i18next'
-import { useState } from 'react'
 import Banner from 'pages/Banner'
 import About from 'pages/About'
 import Story from 'pages/Story'
@@ -20,8 +10,25 @@ import asBg from 'assets/images/as-bg.png'
 import Roadmap from 'pages/Roadmap'
 import Team from 'pages/Team'
 import Footer from 'components/Footer/Footer'
+import { useEffect } from 'react'
 
 const Homepage = () => {
+    useEffect(() => {
+        const appear = document.querySelectorAll('.appear') as any;
+        const cb = function (entries: any) {
+            entries.forEach((entry: any) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('inview');
+                } else {
+                    entry.target.classList.remove('inview');
+                }
+            });
+        }
+        const io = new IntersectionObserver(cb);
+        for (let item of appear) {
+            io.observe(item);
+        }
+    }, [])
 
     return (<Wrap>
         <Banner />
@@ -49,6 +56,17 @@ const Wrap = styled.div`
     margin-top: 60px;
     min-height: 100%;
     background-color: #1E1E1E;
+    .appear {
+        transition: all 0.8s;
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    .appear.inview {
+        opacity: 1;
+        transform: none;
+        transition-delay: 0.3s;
+    }
     ${breakpointsMedias.min1200} {
         margin-top: 0;
     }

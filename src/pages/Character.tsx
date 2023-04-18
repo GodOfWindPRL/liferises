@@ -11,7 +11,7 @@ const Character = () => {
     return <Wrap>
         <div className="container">
             <img src={barTop} alt="" className='bar-top' />
-            <div className="character-text">
+            <div className="character-text appear">
                 <span className="size-2 color-golden ct-1">Character</span>
                 <span className="size-0 color-gold ct-2">These are player-created characters. Each character has its own unique features, expressing the distinct personalities or preferences of the player.</span>
                 <div className="ct-bt">
