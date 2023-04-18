@@ -65,7 +65,7 @@ const TokenMetric = () => {
             </div>
         </div>
         <div className="container">
-            <div className="tm-item tm-left appear">
+            <div className="tm-item tm-left appear-left">
                 <div className="tmi-wrap">
                     <div className='tmi-bg'>
                         <img src={dataFeature[0].frame} alt="" />
@@ -90,7 +90,7 @@ const TokenMetric = () => {
                     </div>
                 </div>
             </div>
-            <div className="tm-item tm-right appear">
+            <div className="tm-item tm-right appear-right">
                 <div className="tmi-wrap">
                     <img src={dataFeature[1].frame} alt="" className='tmi-bg' />
                     <img src={dataFeature[1].img} alt="" className='tmi-token' />

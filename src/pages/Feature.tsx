@@ -37,7 +37,7 @@ const Feature = () => {
             </div>
         </div>
         <div className="container">
-            {dataFeature.map((item, index) => <div key={index} className="fe-item appear">
+            {dataFeature.map((item, index) => <div key={index} className="fe-item appear" >
                 <img src={iconFeature} alt="" />
                 <span className='size-1 color-golden fi-text-1'>{item.title}</span>
                 <span className='size-0 color-gold'>{item.text}</span>
@@ -98,6 +98,7 @@ const Wrap = styled.div`
             align-items: center;
             background-image: url(${frameFeature});
             background-size: 100% 100%;
+            cursor: pointer;
             &:last-child {
                 margin-right: 0;
             }
@@ -114,6 +115,20 @@ const Wrap = styled.div`
             }
             .fi-text-1 {
                 margin-bottom: 12px;
+            }
+            &:hover {
+                transform: translateY(-30px);
+                > img {
+                    animation: rot 1s linear infinite ;
+                }
+                @keyframes rot {
+                    0% {
+                        transform: translateX(-50%) rotateY(0deg);
+                    }
+                    100% {
+                        transform: translateX(-50%) rotateY(360deg);
+                    }
+                }
             }
         }
 

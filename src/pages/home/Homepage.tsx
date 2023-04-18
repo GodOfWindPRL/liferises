@@ -15,6 +15,8 @@ import { useEffect } from 'react'
 const Homepage = () => {
     useEffect(() => {
         const appear = document.querySelectorAll('.appear') as any;
+        const appear2 = document.querySelector('.appear-right') as any;
+        const appear3 = document.querySelector('.appear-left') as any;
         const cb = function (entries: any) {
             entries.forEach((entry: any) => {
                 if (entry.isIntersecting) {
@@ -28,6 +30,8 @@ const Homepage = () => {
         for (let item of appear) {
             io.observe(item);
         }
+        appear2 && io.observe(appear2);
+        appear3 && io.observe(appear3);
     }, [])
 
     return (<Wrap>
@@ -61,8 +65,19 @@ const Wrap = styled.div`
         opacity: 0;
         transform: translateY(40px);
     }
-
-    .appear.inview {
+    .appear-right {
+        transition: all 0.8s;
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    .appear-left {
+        transition: all 0.8s;
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    .appear.inview,
+    .appear-right.inview,
+    .appear-left.inview {
         opacity: 1;
         transform: none;
         transition-delay: 0.3s;
