@@ -143,7 +143,7 @@ const Wrap = styled.div`
             width: fit-content;
             margin-right: 10%;
             max-width: 200px;
-            span, a {
+            .fmi-text {
                 color: #7C7676;
                 font-family: "Exemplar";
             }
