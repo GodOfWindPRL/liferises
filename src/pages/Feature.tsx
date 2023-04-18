@@ -237,7 +237,7 @@ const Wrap = styled.div`
                 ${breakpointsMedias.max550} {
                     width: 70vw;
                     max-width: 358px;
-                    height: 80vw;
+                    height: 82vw;
                     margin: 0 2vw 30px 2vw;
                     padding: 50% 20px 0 20px;
                     background-image: url(${frameFeature2});

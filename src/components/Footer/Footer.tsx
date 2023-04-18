@@ -142,6 +142,10 @@ const Wrap = styled.div`
             width: fit-content;
             margin-right: 10%;
             max-width: 200px;
+            span, a {
+                color: #7C7676;
+                font-family: "Exemplar";
+            }
             &:last-child {
                 margin-right: 0;
             }

@@ -245,6 +245,7 @@ const Wrap = styled.div`
         }
     }
     ${breakpointsMedias.max767} {
+        padding: 0 0 74px 0;
         .hp-title { 
             margin-bottom: 20px;
         }

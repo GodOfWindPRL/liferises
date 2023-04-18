@@ -70,7 +70,6 @@ const TokenMetric = () => {
                     <div className='tmi-bg'>
                         <img src={dataFeature[0].frame} alt="" />
                     </div>
-
                     <img src={dataFeature[0].img} alt="" className='tmi-token' />
                     <div className="tmi-text">
                         <span className="size-1 color-gray">{dataFeature[0].title}</span>
@@ -92,7 +91,9 @@ const TokenMetric = () => {
             </div>
             <div className="tm-item tm-right appear-right">
                 <div className="tmi-wrap">
-                    <img src={dataFeature[1].frame} alt="" className='tmi-bg' />
+                    <div className='tmi-bg'>
+                        <img src={dataFeature[1].frame} alt="" />
+                    </div>
                     <img src={dataFeature[1].img} alt="" className='tmi-token' />
                     <div className="tmi-text">
                         <span className="size-1 color-gray">{dataFeature[1].title}</span>
@@ -181,7 +182,8 @@ const Wrap = styled.div`
                     /* position: absolute;
                     bottom: 0; */
                     width: 100%;
-                    height: fit-content;
+                    height: auto;
+                    display: flex;
                     > img {
                         width: 100%;
                         height: auto;
@@ -253,7 +255,6 @@ const Wrap = styled.div`
                         padding: 40% 10% 0 10%;
                     }
                     .tmi-bg {
-
                         content: url(${frameToken1b});
                     } 
                     .tmi-token {
@@ -352,10 +353,10 @@ const Wrap = styled.div`
             display: flex;
             align-items: center;
             .hpt-text {
-            min-width: 238px;
-            width: 50%;
-            height: auto;
-            margin: 0 12px;
+                min-width: 238px;
+                width: 50%;
+                height: auto;
+                margin: 0 12px;
                 > img {
                         width: 100%;
                         height: auto;

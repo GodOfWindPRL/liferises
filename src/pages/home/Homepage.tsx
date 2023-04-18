@@ -35,6 +35,7 @@ const Homepage = () => {
     }, [])
 
     return (<Wrap>
+        <div className="as-bg"></div>
         <Banner />
         <About />
         <Story />
@@ -53,13 +54,20 @@ const Wrap = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-image: url(${asBg});
-    background-size: 17% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
     margin-top: 60px;
     min-height: 100%;
     background-color: #1E1E1E;
+    .as-bg {
+        position: fixed;
+        width: 620px;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-image: url(${asBg});
+        background-size: 100% auto;
+        background-position: center center;
+    }
     .appear {
         transition: all 0.8s;
         opacity: 0;

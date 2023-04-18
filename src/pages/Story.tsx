@@ -13,7 +13,7 @@ const Story = () => {
                 <span className="size-2 color-golden">About Life Rises world</span>
                 <img src={barStory} alt="" />
                 <span className="size-0 color-gold st-2">Life Rises takes place in a fantasy world, where the fight for survival everyday against dark forces is the norm. On an neutral land, where the last remnant of civilizations gathers, is now the center of it all.</span>
-                <br />
+                {/* <br /> */}
                 <br className='br-x'/>
                 <span className="size-0 color-gold st-2">Together, they survive, prolonging what's left and fighting the battles against destructive forces. Go on a journey along side your daring and trusted comrades, immerse yourselves in brutal and glorious battles, to put an end to evil, to bring back hope and life to the world, together!</span>
             </div>
@@ -67,6 +67,9 @@ const Wrap = styled.div`
                 font-size: 20px;
                 line-height: 24px;
             }
+            > span:first-child {
+                margin-bottom: 16px;
+            }
         }
     }
     ${breakpointsMedias.max1199} {
@@ -96,12 +99,12 @@ const Wrap = styled.div`
                 position: absolute;
                 top: 0;
                 left: 0;
-                padding: 45% 15% 0 15%;
-                ${breakpointsMedias.max376} {
-                    padding: 40% 13% 0 13%;
-                    > .br-x {
+                padding: 42% 13% 0 13%;
+                ${breakpointsMedias.max480} {
+                    padding: 39% 13% 0 13%;
+                    /* > .br-x {
                         display: none;
-                    }
+                    } */
                 }
                 > img {
                     margin: 20px 0;
@@ -110,6 +113,12 @@ const Wrap = styled.div`
                     font-size: 14px;
                     line-height: 100%;
                 }
+                > span:first-child {
+                    margin-bottom: 6px;
+                }
+            }
+            > img {
+                transform: scale(1.05);
             }
         }
     }
