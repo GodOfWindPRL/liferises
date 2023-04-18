@@ -26,8 +26,8 @@ const Wrap = styled.div`
     position: relative;
     padding: 0 4px;
     .menu-icon {
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 22px;
         display: flex;
         align-items: center;
         cursor: pointer;
