@@ -140,7 +140,7 @@ const Wrap = styled.div`
         /* position: absolute;
         top: 0;
         left: 0; */
-        margin-bottom: 146px;
+        margin-bottom: 42px;
         transform: translateY(-50%);
         width: 100%;
         display: flex;
@@ -169,14 +169,14 @@ const Wrap = styled.div`
         margin-bottom: 16px;
         flex-wrap: wrap;
         .fe-item {
-            width: calc((100% - 120px) / 4);
+            width: calc((100% - 160px) / 5);
             display: flex;
             flex-direction: column;
             align-items: center;
             margin-right: 40px;
             margin-bottom: 60px;
             align-self: stretch;
-            &:nth-child(4n + 4) {
+            &:nth-child(5n + 5) {
                 margin-right: 0;
             }
             .fi-img {
@@ -198,6 +198,16 @@ const Wrap = styled.div`
             .fi-job {
                 text-align: center;
             }
+            ${breakpointsMedias.max1199} {
+                width: calc((100% - 120px) / 4);
+                margin-right: 40px;
+                &:nth-child(5n + 5) {
+                    margin-right: 40px;
+                }
+                &:nth-child(4n + 4) {
+                    margin-right: 0;
+                }
+            }
         }
     }
     ${breakpointsMedias.max1199} {
@@ -214,7 +224,7 @@ const Wrap = styled.div`
             width: 100%;
             display: flex;
             align-items: center;
-            margin-bottom: 80px;
+            margin-bottom: 10px;
             .hpt-text {
                 min-width: 238px;
                 width: 50%;
@@ -256,6 +266,9 @@ const Wrap = styled.div`
                 margin-right: 16px;
                 margin-bottom: 34px;
                 align-self: stretch;
+                &:nth-child(5n + 5) {
+                    margin-right: 16px;
+                }
                 &:nth-child(2n + 2) {
                     margin-right: 0;
                 }
