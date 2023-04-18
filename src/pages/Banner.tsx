@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 import bgBanner from "assets/images/bg-banner.png"
+import bgBanner2 from "assets/images/bg-banner-2.png"
+import { breakpointsMedias } from 'configs/breakpoints'
 
 const Banner = () => {
     return <Wrap>
-        <img src={bgBanner} alt="" className='banner-bg'/>
+        <img src={bgBanner} alt="" className='banner-bg' />
     </Wrap>
 
 }
@@ -18,5 +20,10 @@ const Wrap = styled.div`
     .banner-bg {
         width: 100%;
         height: 100%;
+    }
+    ${breakpointsMedias.max767} {
+        .banner-bg {
+            content: url(${bgBanner2});
+        }
     }
 `

@@ -44,7 +44,12 @@ const Wrap = styled.div`
     background-size: 17% 100%;
     background-position: center;
     background-repeat: no-repeat;
-    ${breakpointsMedias.min768} {
+    margin-top: 60px;
+    ${breakpointsMedias.min1200} {
+        margin-top: 0;
+    }
+    ${breakpointsMedias.min1600} {
+        margin-top: 0;
     }
 `
 

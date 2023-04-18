@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Exemplar";
+  src: url("assets/fonts/Letters_from_Sweden_-_ExemplarPro-Regular.otf") format("truetype");
+  font-weight: 400;
+  font-style: Regular;
+}
+
 html {
   line-height: 1.17;
   -webkit-text-size-adjust: 100%;
@@ -51,8 +58,10 @@ pre {
  * Remove the gray background on active links in IE 10.
  */
 
-a {
+a, a:active, a:hover {
   background-color: transparent;
+  text-decoration: none;
+  color: #BDBDBD;
 }
 
 /**
@@ -365,6 +374,7 @@ template {
 
 #root {
   overflow: hidden;
+
 }
 
 .color-gray {
@@ -374,6 +384,9 @@ template {
 .color-blue {
   color: #7EBAFF;
   text-shadow: 0px 0px 8px #3E88B0, 0px 4px 8px #000000;
+  -webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;
 }
 
 .color-gold {
@@ -384,6 +397,9 @@ template {
   color: #E2C080;
   mix-blend-mode: normal;
   text-shadow: 0px 0px 8px rgba(221, 207, 167, 0.6), 0px 4px 12px #000000;
+  -webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;
 }
 
 .bg-black {
@@ -391,14 +407,29 @@ template {
 }
 
 .size-0 {
-  font-family: "BlaakBold";
+  font-family: "Exemplar";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
 }
 
+.size-0-2 {
+  font-family: "Exemplar";
+  font-style: Regular;
+  font-size: 20px;
+  line-height: 100%;
+}
+
 .size-1 {
+  font-family: "BlaakBold";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.size-2 {
   font-family: "BlaakBold";
   font-style: normal;
   font-weight: 400;
@@ -406,7 +437,7 @@ template {
   line-height: 41px;
 }
 
-.size-2 {
+.size-3 {
   font-family: "BlaakBold";
   font-style: normal;
   font-weight: 400;
@@ -436,8 +467,86 @@ input::placeholder {
   background-clip: text;
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (max-width: 1199px) {
+  .size-0 {
+    font-family: "Exemplar";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  .size-0-2 {
+    font-family: "Exemplar";
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 100%;
+  }
+  
+  .size-1 {
+    font-family: "BlaakBold";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+  }
+  
+  .size-2 {
+    font-family: "BlaakBold";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 35px;
+  }
+  
+  .size-3 {
+    font-family: "BlaakBold";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 100%;
+  }
+}
 
+@media only screen and (max-width: 1600px) {
+  .size-0 {
+    font-family: "Exemplar";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  
+  .size-0-2 {
+    font-family: "Exemplar";
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 100%;
+  }
+  
+  .size-1 {
+    font-family: "BlaakBold";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+  }
+  
+  .size-2 {
+    font-family: "BlaakBold";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+  }
+  
+  .size-3 {
+    font-family: "BlaakBold";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 100%;
+  }
 }
 
 /* .Toastify__toast-container */

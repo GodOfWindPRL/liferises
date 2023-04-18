@@ -9,7 +9,6 @@ interface IMenuButton {
 }
 
 const MenuButton = ({ onClick, show }: IMenuButton) => {
-
     return (
         <Wrap onClick={onClick} >
             <div className="menu-icon" >

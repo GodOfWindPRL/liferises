@@ -5,6 +5,9 @@ import titleFeature from "assets/images/title-feature.png"
 import frameFeature from "assets/images/frame-feature.png"
 import iconFeature from "assets/images/feature-icon.png"
 import { breakpointsMedias } from 'configs/breakpoints'
+import titleLeft2 from "assets/images/title-left-2.png"
+import titleRight2 from "assets/images/title-right-2.png"
+import frameFeature2 from "assets/images/frame-feature-2.png"
 
 const Feature = () => {
     const dataFeature = [{
@@ -123,10 +126,118 @@ const Wrap = styled.div`
             .fe-item {
                 margin: 0 10% 30px 10%;
                 &:last-child {
+                    margin-right: 10%;
                     margin: 0 10% 30px 10%;
+                }
+                &:nth-child(2n+2) {
+
                 }
             }
         }
        
+    }
+    ${breakpointsMedias.max1199} {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        padding: 144px 0 180px 0;
+        ${breakpointsMedias.max767} {
+            padding: 70px 0 90px 0;
+        }
+        .hp-title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            .hpt-text {
+            min-width: 238px;
+            width: 50%;
+            height: auto;
+            margin: 0 12px;
+                > img {
+                        width: 100%;
+                        height: auto;
+                }
+            }
+            .hpt-side {
+                flex: 1;
+                &:first-child {
+                    > img {
+                        content: url(${titleLeft2});
+                    }
+                }
+                &:last-child {
+                    > img {
+                        content: url(${titleRight2});
+                    }
+                }
+                > img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        .container {
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            .fe-item {
+                width: 25vw;
+                height: 37vw;
+                margin: 0 5vw 30px 5vw;
+                padding: 20% 20px 0 20px;
+                &:last-child {
+                    margin-right: 5vw;
+                    margin: 0 5vw 30px 5vw;
+                }
+                &:nth-child(2n+2) {
+
+                }
+                > img {
+                    top: 10%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 23%;
+                    height: auto;
+                    ${breakpointsMedias.max767} {
+                        width: 20%;
+                    }
+                }
+                ${breakpointsMedias.max767} {
+                    width: 35vw;
+                    height: 45.5vw;
+                    margin: 0 2vw 30px 2vw;
+                    padding: 24% 20px 0 20px;
+                    &:last-child {
+                        margin-right: 2vw;
+                        margin: 0 2vw 30px 2vw;
+                    }
+                }
+                ${breakpointsMedias.max550} {
+                    width: 70vw;
+                    max-width: 358px;
+                    height: 80vw;
+                    margin: 0 2vw 30px 2vw;
+                    padding: 50% 20px 0 20px;
+                    background-image: url(${frameFeature2});
+                    &:last-child {
+                        margin-right: 2vw;
+                        margin: 0 2vw 30px 2vw;
+                    }
+                    .fi-text-1 {
+                        margin-bottom: 4px;
+                    }
+                    > span:last-child {
+                        max-width: 250px;
+                    }
+                }
+            }
+        }
     }
 `

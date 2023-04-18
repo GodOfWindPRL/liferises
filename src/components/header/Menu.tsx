@@ -2,9 +2,11 @@ import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import discordBt from 'assets/images/discord-bt.png'
 import bgLink from 'assets/images/bg-link.png'
+import bgLink2 from 'assets/images/bg-link-2.png'
 import { useTranslation } from 'react-i18next';
 import configColor from 'configs/configColor';
 import { breakpointsMedias } from 'configs/breakpoints'
+import Button from 'components/core/Button';
 
 interface IMenu {
     onClose: () => void
@@ -42,7 +44,7 @@ const Menu = ({ onClose }: IMenu) => {
     console.log(pathname.split("/")[1] === "")
 
     return (
-        <Wrap >
+        <Wrap onClick={(e) => { e.stopPropagation() }}>
             <div className="bg-net"></div>
             {/* <img src={ballLight} alt="" className='bg-light' /> */}
             <div className={`menu-list`}>
@@ -55,10 +57,10 @@ const Menu = ({ onClose }: IMenu) => {
                                 onClose()
                             }}
                         >
-                            <span className={`${(pathname.split("/")[1] === item.link && item.hasBg) ? "color-golden" : "color-gray"} size-4`}>{t(item.text)}</span>
+                            <span className={`${(pathname.split("/")[1] === item.link && item.hasBg) ? "color-golden" : "color-gray"} size-1`}>{t(item.text)}</span>
                         </Link>)
                 }
-
+                <Button text='Join Discord' className='bt-mobile' />
                 <a href={""}
                     target="_blank" rel="noreferrer"
                     className={`social-item`}
@@ -67,9 +69,8 @@ const Menu = ({ onClose }: IMenu) => {
                     }}
                 >
                     <img src={discordBt} alt="" className='bg-social' />
-                    <span className={`size-0`}>{t("joinDiscord")}</span>
+                    <span className={`size-1`}>{t("joinDiscord")}</span>
                 </a>
-
             </div>
         </Wrap>
     )
@@ -81,9 +82,12 @@ const Wrap = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 60px);
     background-color: #000000;
     position: relative;
+    /* margin-top: auto; */
+    max-width: 280px;
+    margin-left: auto;
     .bg-net {
         height: 100%;
         position: absolute;
@@ -98,14 +102,17 @@ const Wrap = styled.div`
         display: flex;
         flex-direction: column;
         width: 100%;
-        padding: 72px 18px 14px 14px;
+        /* padding: 72px 0; */
         z-index: 0;
         height: 100%;
+        
         .menu-item {
             cursor: pointer;
             display: flex;
             align-items: center;
-            height: 100%;
+            height: 60px;
+            justify-content: flex-end;
+            padding: 0 16px;
             &:hover {
                 > span {
                     color: #E2C080;
@@ -114,33 +121,70 @@ const Wrap = styled.div`
                 }
             }
         }
+        .bt-mobile {
+            max-width: 249px;
+            height: 36px;
+            margin: 16px auto;
+        }
+        .social-item {
+            display: none;
+        }
         .menu-item-active {
-            background-image:url(${bgLink});
+            background-image:url(${bgLink2});
             background-size: 100% 100%;
         }
     }
-    ${breakpointsMedias.min768} {
+    ${breakpointsMedias.min1200} {
         flex-direction: row;
         background-color: transparent;
-        .bg-net {
-           display: none;
-        }
-        .bg-light {
-            display: none;
-        }
+        height: 100%;
+        width: 100%;
+        max-width: unset;
         .menu-list {
             flex-direction: row;
             align-items: center;
             padding: 0;
             .menu-item {
                 padding: 0 20px;
+                height: 100%;
+            }
+            .bt-mobile {
+                display: none;
             }
             .social-item {
-                margin: 0;
+                width: 110px;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                margin-left: auto;
+                .bg-social {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: auto;
+                    z-index: 0;
+                }
+                > span {
+                    margin-top: 69px;
+                    text-align: center;
+                    color: #000000;
+                    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
+                    line-height: 20px;
+                    z-index: 1;
+                    font-family: "BlaakBold";
+                    font-size: 20px;
+                }
+            } 
+            .menu-item-active {
+                background-image:url(${bgLink});
+                background-size: 100% 100%;
             }
         }
     }
-    ${breakpointsMedias.min1200} {
+    ${breakpointsMedias.min1600} {
         .menu-list {
             .menu-item {
                 padding: 0 30px;
@@ -152,6 +196,7 @@ const Wrap = styled.div`
                 flex-direction: column;
                 align-items: center;
                 position: relative;
+                margin-left: auto;
                 .bg-social {
                     position: absolute;
                     top: 0;
@@ -167,6 +212,7 @@ const Wrap = styled.div`
                     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
                     line-height: 20px;
                     z-index: 1;
+                    font-family: "BlaakBold";
                 }
             }
         }

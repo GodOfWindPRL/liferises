@@ -19,6 +19,10 @@ import imgTeam14 from "assets/images/team14.png"
 import imgTeam15 from "assets/images/team15.png"
 import topTeam from "assets/images/top-team.png"
 import styled from 'styled-components'
+import titleLeft2 from "assets/images/title-left-2.png"
+import titleRight2 from "assets/images/title-right-2.png"
+import topTeam2 from "assets/images/top-team-2.png"
+import { breakpointsMedias } from "configs/breakpoints"
 
 const Team = () => {
     const dataFeature = [{
@@ -126,7 +130,7 @@ const Wrap = styled.div`
     .top-team {
         width: 100%;
         height: fit-content;
-       
+        display: flex;
         > img {
             width: 100%;
             height: auto;
@@ -171,6 +175,7 @@ const Wrap = styled.div`
             align-items: center;
             margin-right: 40px;
             margin-bottom: 60px;
+            align-self: stretch;
             &:nth-child(4n + 4) {
                 margin-right: 0;
             }
@@ -192,6 +197,73 @@ const Wrap = styled.div`
             }
             .fi-job {
                 text-align: center;
+            }
+        }
+    }
+    ${breakpointsMedias.max1199} {
+        padding: 0 0 155px 0;
+        .top-team {
+            margin-bottom: 3%;
+            > img {
+                content: url(${topTeam2});
+                margin-top: -5%;
+            }
+        }
+        .hp-title {
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin-bottom: 80px;
+            .hpt-text {
+                min-width: 238px;
+                width: 50%;
+                height: auto;
+                margin: 0 12px;
+                > img {
+                        width: 100%;
+                        height: auto;
+                }
+            }
+            .hpt-side {
+                flex: 1;
+                &:first-child {
+                    > img {
+                        content: url(${titleLeft2});
+                    }
+                }
+                &:last-child {
+                    > img {
+                        content: url(${titleRight2});
+                    }
+                }
+                > img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+    ${breakpointsMedias.max767} {
+        .hp-title { 
+            margin-bottom: 20px;
+        }
+        .container {
+            margin-bottom: 0;
+            .fe-item {
+                width: calc((100% - 16px) / 2);
+                margin-right: 16px;
+                margin-bottom: 34px;
+                align-self: stretch;
+                &:nth-child(2n + 2) {
+                    margin-right: 0;
+                }
+                .fi-img {
+                    margin-bottom: 12.5px;
+                }
+                .fi-name {
+                    margin-bottom: 0;
+                }
             }
         }
     }

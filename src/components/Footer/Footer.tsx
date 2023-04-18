@@ -43,10 +43,8 @@ const Footer = () => {
             </div>
             <div className="container">
                 <div className="footer-logo">
-                    <Logo />
-                    <span className="size-0 color-gray">Copyright @2023 Life Rises The Beginning of the Metaverse.
-                        Life Rises The Beginning of the Metaverse is a product of
-                        Your Company Metaverse Studio Ltd.</span>
+                    <Logo noMobile />
+                    <span className="size-0 color-gray">Copyright @2023 Life Rises The Beginning of the Metaverse. Life Rises The Beginning of the Metaverse is a product of Your Company Metaverse Studio Ltd.</span>
                 </div>
                 <div className={`footer-main`}>
                     <div className="fm-item">
@@ -85,7 +83,6 @@ export default Footer
 
 const Wrap = styled.div`
     display: flex;
-    top: 0;
     width: 100%;
     height: 275px;
     position: relative;
@@ -106,10 +103,10 @@ const Wrap = styled.div`
     .bar-footer {
         position: absolute;
         top: 0;
-        left: 0;
-        width: 100%;
+        left: 50%;
+        width: 70%;
         height: fit-content;
-        transform: translateY(-50%);
+        transform: translate(-50%, -50%);
         > img {
             width: 100%;
             height: auto;
@@ -122,12 +119,15 @@ const Wrap = styled.div`
     }
     .footer-logo {
         z-index: 1;
-        width: 30%;
+        width: 40%;
         > div {
             width: 100%;
+            margin-bottom: 24px;
         }
         > span {
-            text-align: center;
+            display: flex;
+            text-align: center !important;
+            color: #7C7676;
         }
         /* max-width: 387px; */
     }
@@ -140,17 +140,86 @@ const Wrap = styled.div`
             display: flex;
             flex-direction: column;
             width: fit-content;
-            margin-right: 80px;
+            margin-right: 10%;
+            max-width: 200px;
             &:last-child {
                 margin-right: 0;
             }
+            > span:nth-child(1) {
+                margin-bottom: 14px;
+            }
+            > a:nth-child(2) {
+                margin-bottom: 10px;
+            }
+            > a:hover {
+                color: #E2C080;
+            }
+            .fmi-list {
+                display: flex;
+                flex-wrap: wrap;
+                .social-item {
+                    width: 36px;
+                    height: 36px;
+                    margin-right: 20px;
+                    margin-bottom: 12px;
+                }
+            }
+        }
+        ${breakpointsMedias.max991} {
+            flex-wrap: wrap;
+            margin-left: 10%;
+            .fm-item {
+                width: 50%;
+                margin-right: 0;
+                max-width: unset;
+                margin-bottom: 20px;
+                &:last-child {
+                    width: 100%;
+                    margin-bottom: 0;
+                }
+            }
         }
     }
-    ${breakpointsMedias.min768} {
-
-    }
-    ${breakpointsMedias.min1200} {
-
+    ${breakpointsMedias.max767} {
+        height: auto;
+        padding: 48px 0 26px 0;
+        background: #0C0C0C;
+        .container {
+            flex-direction: column;
+        }
+        .bg-footer {
+            height: 300px;
+            > img {
+                width: auto;
+                height: 100%;
+            }
+        }
+        .bar-footer {
+            width: 90%;
+        }
+        .footer-logo {
+            z-index: 1;
+            width: 90%;
+            max-width: 360px;
+            margin-bottom: 51px;
+        }
+        .footer-main {
+            margin-left: 0;
+            width: 100%;
+            .fm-item {
+                > a:nth-child(2) {
+                    margin-bottom: 6px;
+                }
+                .fmi-list {
+                    .social-item {
+                        width: 33px;
+                        height: 33px;
+                        margin-right: 10px;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
     }
 `
 
@@ -159,12 +228,14 @@ interface ISocicalItem {
 }
 
 const SocicalItem = styled.div`
-    background-color: #7C7676;
+    width: 100%;
+    height: 100%;
+    background-color: #7C7676 !important;
     -webkit-mask: url(${({ active }: ISocicalItem) => active}) no-repeat center;
     mask: url(${({ active }: ISocicalItem) => active}) no-repeat center;
     mask-size: contain;
     /* transition: 0.6s ease-in-out; */
     &:hover {
-        background: #E2C080;
+        background: #E2C080 !important;
     }
 `
