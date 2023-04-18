@@ -10,6 +10,8 @@ import iconTwitter2 from 'assets/images/icon-twitter.svg'
 import iconOpensea2 from 'assets/images/icon-opensea.svg'
 import bgFooter from 'assets/images/bg-footer.png'
 import barFooter2 from 'assets/images/bar-footer-2.png'
+import bgSword from 'assets/images/bg-footer-sword.png'
+import bgFire from 'assets/images/bg-footer-fire.png'
 
 export const SOCIAL_LIST = [
     {
@@ -37,7 +39,9 @@ const Footer = () => {
     return (
         <Wrap className=''>
             <div className='bg-footer'>
-                <img src={bgFooter} alt="" />
+                <img src={bgFooter} alt="" className='bg-desktop'/>
+                <img src={bgFire} alt="" className='bg-mobile-fire'/>
+                <img src={bgSword} alt="" className='bg-mobile-sword'/>
             </div>
             <div className='bar-footer'>
                 <img src={barFooter} alt="" />
@@ -99,6 +103,12 @@ const Wrap = styled.div`
         > img {
             width: auto;
             height: 100%;
+        }
+        .bg-mobile-sword {
+            display: none;
+        }
+        .bg-mobile-fire {
+            display: none;
         }
     }
     .bar-footer {
@@ -195,9 +205,22 @@ const Wrap = styled.div`
         }
         .bg-footer {
             height: 300px;
-            > img {
-                width: auto;
-                height: 100%;
+            width: 100%;
+            .bg-desktop {
+                display: none;
+            }
+            .bg-mobile-sword {
+                display: flex;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+
+            }
+            .bg-mobile-fire {
+                display: flex;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
             }
         }
         .bar-footer {
