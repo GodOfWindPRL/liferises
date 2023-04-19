@@ -57,7 +57,7 @@ const Roadmap = () => {
         ]
     },]
 
-    return <Wrap>
+    return <Wrap id='roadmap'>
         <div className="hp-title">
             <div className='hpt-side'>
                 <img src={titleLeft} alt="" />

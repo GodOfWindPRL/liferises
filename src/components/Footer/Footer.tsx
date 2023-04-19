@@ -55,12 +55,15 @@ const Footer = () => {
                     <div className="fm-item">
                         <span className="size-2 color-golden">About Us</span>
                         <a href="#team" className="fmi-text">Team</a>
-                        <a href="#team" className="fmi-text">Document</a>
+                        <a
+                            href="https://drive.google.com/file/d/1mZtr8TBftcKkachbJIy0IyKFD68tee_g/view"
+                            target="_blank" rel="noreferrer"
+                            className="fmi-text">Document</a>
                     </div>
                     <div className="fm-item">
                         <span className="size-2 color-golden">Links</span>
-                        <a href="#team" className="fmi-text">Game story</a>
-                        <a href="#team" className="fmi-text">Characters</a>
+                        <a href="#story" className="fmi-text">Game story</a>
+                        <a href="#character" className="fmi-text">Characters</a>
                     </div>
                     <div className="fm-item">
                         <span className="size-2 color-golden">Socials</span>

@@ -5,7 +5,7 @@ import bgStory from "assets/images/bg-story.png"
 import { breakpointsMedias } from 'configs/breakpoints'
 
 const Story = () => {
-    return <Wrap>
+    return <Wrap id="story">
         <div className="story appear" >
             <img src={frameStory} alt="" />
             <div className="story-text">

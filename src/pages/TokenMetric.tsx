@@ -54,7 +54,7 @@ const TokenMetric = () => {
         ]
     }]
 
-    return <Wrap>
+    return <Wrap id='token-metric'>
         <div className="hp-title">
             <div className='hpt-side'>
                 <img src={titleLeft} alt="" />

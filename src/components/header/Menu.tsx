@@ -15,7 +15,7 @@ interface IMenu {
 export const MENU_LIST = [
     {
         text: "story",
-        link: "",
+        link: "#story",
         hasBg: true
     },
     {
@@ -24,15 +24,15 @@ export const MENU_LIST = [
     },
     {
         text: "tokenMetric",
-        link: "",
+        link: "#token-metric",
     },
     {
         text: "roadmap",
-        link: "",
+        link: "#roadmap",
     },
     {
         text: "documents",
-        link: "",
+        link: "https://drive.google.com/file/d/1mZtr8TBftcKkachbJIy0IyKFD68tee_g/view",
     }
 ];
 
@@ -50,7 +50,7 @@ const Menu = ({ onClose }: IMenu) => {
             <div className={`menu-list`}>
                 {
                     MENU_LIST.map((item, index) =>
-                        <Link to={item.link}
+                        <a href={item.link}
                             key={index}
                             className={`menu-item ${(pathname.split("/")[1] === item.link && item.hasBg) ? "menu-item-active" : ""}`}
                             onClick={() => {
@@ -58,7 +58,7 @@ const Menu = ({ onClose }: IMenu) => {
                             }}
                         >
                             <span className={`${(pathname.split("/")[1] === item.link && item.hasBg) ? "color-golden" : "color-gray"} size-1`}>{t(item.text)}</span>
-                        </Link>)
+                        </a>)
                 }
                 <Button text='Join Discord' className='bt-mobile' />
                 <a href={""}

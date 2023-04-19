@@ -99,6 +99,8 @@ export const breakpointsMedias = {
     max1440: `@media(max-width: ${breakpoints[1440]}px)`,
     max1540: `@media(max-width: ${breakpoints[1540]}px)`,
     max1599: `@media(max-width: ${breakpoints[1599]}px)`,
+    max1920: `@media(max-width: ${breakpoints[1920]}px)`,
+
 
     //Min preset
     min481: `@media(min-width: ${breakpoints[481]}px)`,

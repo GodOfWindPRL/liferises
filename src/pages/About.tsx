@@ -11,11 +11,44 @@ import bgVideo from "assets/images/bg-video.png"
 import frameVideo from "assets/images/frame-video.png"
 import frameVideo2 from "assets/images/frame-video-2.png"
 import playBt from "assets/images/play-bt.png"
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { breakpointsMedias } from 'configs/breakpoints'
+import YouTube from 'react-youtube'
 
 const About = () => {
-    const [muted, setMuted] = useState<boolean>(true)
+    const [muted, setMuted] = useState<boolean>(true);
+    const [showBt, setShowBt] = useState<boolean>(true);
+    const playerRef = useRef<any>(null);
+
+    const playVideo = async () => {
+        // console.log("????")
+        // if (playerRef?.current?.internalPlayer) {
+        //     playerRef?.current?.internalPlayer?.playVideo();
+        // }
+    }
+
+    const pauseVideo = async () => {
+        if (playerRef?.current?.internalPlayer) {
+            let checkPlay = await playerRef.current.internalPlayer.getPlayerState();
+            console.log({ checkPlay })
+            if (checkPlay !== 1) {
+                playerRef.current.internalPlayer.playVideo();
+            } else {
+                playerRef.current.internalPlayer.pauseVideo();
+            }
+        }
+        //  playerRef?.current?.internalPlayer.getPlayerState() !== 1) {
+        //     console.log("ad")
+        //    
+        // } else {
+        //     console.log("ax")
+        //     playerRef.current?.internalPlayer.pauseVideo();
+        // }
+    }
+
+    useEffect(() => {
+
+    }, [])
 
     return <Wrap>
         <div className="hp-title">
@@ -31,10 +64,50 @@ const About = () => {
         </div>
         <div className="container appear">
             <div className="about-video">
-                <video src="" autoPlay muted={muted} playsInline loop poster={bgVideo}></video>
                 <img src={frameVideo} alt="" className='av-border' />
-                <img src={frameVideo2} alt="" className='av-border-2' />
-                <img src={playBt} alt="" className='av-bt' />
+                <img src={frameVideo2} alt="" className='av-border-2' onClick={pauseVideo} />
+                <div className="av-video" >
+                    {/* <iframe width="100%" height="100%" id="video-cover-top"
+                            src="https://www.youtube.com/embed/sv_Tb8jMPG0"
+                            title="YouTube video player" frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen></iframe> */}
+                    <YouTube
+                        videoId={"sv_Tb8jMPG0"}                  // defaults -> ''
+                        className={""}                // defaults -> ''
+                        iframeClassName={""}          // defaults -> ''
+                        // defaults -> {}
+                        title={"About Liferies"}                    // defaults -> ''
+                        loading={"lazy"}
+                        ref={playerRef}                 // defaults -> undefined
+                        opts={{
+                            playerVars: {
+                                'playsinline': 1,
+                                "loop": 1,
+                                "showinfo": 0,
+                                "controls": 0,
+                                "autoplay": 0,
+                                "mute": 0,
+                                "playlist": "sv_Tb8jMPG0",
+                                "modestbranding": 1,
+                                "rel": 0
+                            }
+                        }}
+                        onStateChange={(e) => {
+                            let checkPlay = e.target.getPlayerState()
+                            if (checkPlay !== 1) {
+                                setShowBt(true)
+                            } else {
+                                setShowBt(false)
+                            }
+                        }}                     // defaults -> {}
+                    />
+                </div>
+                {/* <video src="https://www.youtube.com/watch?v=sv_Tb8jMPG0" autoPlay muted={muted} playsInline loop poster={bgVideo}></video> */}
+                {showBt && <div className='av-bt' onClick={playVideo}>
+                    <img src={playBt} alt="" />
+                </div>}
+
             </div>
             <div className="about-text">
                 <img src={frameFullAbout} alt="" />
@@ -88,6 +161,10 @@ const Wrap = styled.div`
     .container {
         display: flex;
         justify-content: center;
+        max-width: 1520px;
+        ${breakpointsMedias.max1920} {
+            max-width: 1450px; 
+        }
         .about-video {
             width: 39.22vw;
             height: 30vw;
@@ -96,13 +173,29 @@ const Wrap = styled.div`
             justify-content: center;
             position: relative;
             cursor: pointer;
-            > video {
+            .av-video {
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 width: 90%;
                 height: 86%;
+                z-index: 0;
+                display: flex;
+                align-items: center;
+                > div {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    > iframe {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+               
             }
             .av-border {
                 position: absolute;
@@ -125,8 +218,11 @@ const Wrap = styled.div`
             .av-bt {
                 width: 13.23%;
                 height: auto;
-                z-index: 1;
-              
+                z-index: 2;
+                > img {
+                    width: 100%;
+                    height: auto;
+                }
             }
         }
         .about-text {

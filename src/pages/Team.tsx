@@ -50,14 +50,6 @@ const Team = () => {
         name: "Albus",
         job: "Community Manager"
     }, {
-        img: imgTeam3,
-        name: "An Đặng ",
-        job: "Lead 2D Designer"
-    }, {
-        img: imgTeam4,
-        name: "Ninh Lê",
-        job: "Lead 3D Designer"
-    }, {
         img: imgTeam5,
         name: "Henry",
         job: "Community Manager"
@@ -65,6 +57,18 @@ const Team = () => {
         img: imgTeam7,
         name: "Yến Nguyễn",
         job: "Asset Integration Manager"
+    }, {
+        img: imgTeam14,
+        name: "Chương Nguyễn",
+        job: "Lead Level Design"
+    }, {
+        img: imgTeam4,
+        name: "Ninh Lê",
+        job: "Lead 3D Designer"
+    }, {
+        img: imgTeam3,
+        name: "An Đặng ",
+        job: "Lead 2D Designer"
     }, {
         img: imgTeam8,
         name: "Sabo Lee",
@@ -78,16 +82,12 @@ const Team = () => {
         name: "Dương Nguyễn ",
         job: "Game Developer"
     }, {
-        img: imgTeam14,
-        name: "Chương Nguyễn",
-        job: "Lead Level Design"
-    }, {
         img: imgTeam15,
         name: "Luke",
         job: "Game Developer"
     },]
 
-    return <Wrap>
+    return <Wrap id="team">
         <div className="top-team">
             <img src={topTeam} alt="" />
         </div>

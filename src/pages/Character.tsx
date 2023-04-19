@@ -8,7 +8,7 @@ import imgFire from "assets/images/fire.png"
 import { breakpointsMedias } from 'configs/breakpoints'
 
 const Character = () => {
-    return <Wrap>
+    return <Wrap id="character">
         <div className="container">
             <img src={barTop} alt="" className='bar-top' />
             <div className="character-text appear">
