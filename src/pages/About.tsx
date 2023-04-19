@@ -22,15 +22,15 @@ const About = () => {
 
     const playVideo = async () => {
         // console.log("????")
-        // if (playerRef?.current?.internalPlayer) {
-        //     playerRef?.current?.internalPlayer?.playVideo();
-        // }
+        if (playerRef?.current?.internalPlayer) {
+            playerRef?.current?.internalPlayer?.playVideo();
+        }
     }
 
     const pauseVideo = async () => {
         if (playerRef?.current?.internalPlayer) {
             let checkPlay = await playerRef.current.internalPlayer.getPlayerState();
-            console.log({ checkPlay })
+            // console.log({ checkPlay })
             if (checkPlay !== 1) {
                 playerRef.current.internalPlayer.playVideo();
             } else {
@@ -218,7 +218,7 @@ const Wrap = styled.div`
             .av-bt {
                 width: 13.23%;
                 height: auto;
-                z-index: 2;
+                z-index: 1;
                 > img {
                     width: 100%;
                     height: auto;

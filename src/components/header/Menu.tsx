@@ -41,7 +41,6 @@ export const MENU_LIST = [
 const Menu = ({ onClose }: IMenu) => {
     const { pathname } = useLocation();
     const { t } = useTranslation()
-    console.log(pathname.split("/")[1] === "")
 
     return (
         <Wrap onClick={(e) => { e.stopPropagation() }}>
