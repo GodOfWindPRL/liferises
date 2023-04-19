@@ -15,11 +15,11 @@ import bgFire from 'assets/images/bg-footer-fire.png'
 
 export const SOCIAL_LIST = [
     {
-        link: "https://twitter.com/TheMeoNFT",
+        link: "/",
         icon: iconTwitter2,
     },
     {
-        link: "https://discord.gg/themeo",
+        link: "/",
         icon: iconDiscord2,
     },
     {
