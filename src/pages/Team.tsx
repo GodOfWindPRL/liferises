@@ -30,6 +30,22 @@ const Team = () => {
         name: "Peter Nguyen",
         job: "Founder & CEO"
     }, {
+        img: imgTeam6,
+        name: "Edward Pham",
+        job: "COO&Game Director"
+    }, {
+        img: imgTeam10,
+        name: "Oanh Nguyễn",
+        job: "Project Manager"
+    }, {
+        img: imgTeam11,
+        name: "Felix Trần",
+        job: "RND Director"
+    }, {
+        img: imgTeam12,
+        name: "Linh Nguyễn",
+        job: "Art Director"
+    }, {
         img: imgTeam2,
         name: "Albus",
         job: "Community Manager"
@@ -46,10 +62,6 @@ const Team = () => {
         name: "Henry",
         job: "Community Manager"
     }, {
-        img: imgTeam6,
-        name: "Edward Pham",
-        job: "COO&Game Director"
-    }, {
         img: imgTeam7,
         name: "Yến Nguyễn",
         job: "Asset Integration Manager"
@@ -61,18 +73,6 @@ const Team = () => {
         img: imgTeam9,
         name: "Thân Trần",
         job: "Game Developer"
-    }, {
-        img: imgTeam10,
-        name: "Oanh Nguyễn",
-        job: "Project Manager"
-    }, {
-        img: imgTeam11,
-        name: "Felix Trần",
-        job: "RND Director"
-    }, {
-        img: imgTeam12,
-        name: "Linh Nguyễn",
-        job: "Art Director"
     }, {
         img: imgTeam13,
         name: "Dương Nguyễn ",

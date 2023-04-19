@@ -11,6 +11,8 @@ import titleRight2 from "assets/images/title-right-2.png"
 import { breakpointsMedias } from 'configs/breakpoints'
 import frameToken1b from "assets/images/frame-token-1b.png"
 import frameToken2b from "assets/images/frame-token-2b.png"
+import bgTokenmetric from "assets/images/bg-tokenmetric.png"
+import bgTokenmetric2 from "assets/images/bg-tokenmetric-2.png"
 
 const TokenMetric = () => {
     const dataFeature = [{
@@ -127,6 +129,8 @@ const Wrap = styled.div`
     align-items: center;
     justify-content: center;
     padding: 244px 0 230px 0;
+    background-image: url(${bgTokenmetric});
+    background-size: cover;
     .hp-title {
         position: absolute;
         top: 0;
@@ -343,6 +347,7 @@ const Wrap = styled.div`
         padding: 244px 0 230px 0;
         ${breakpointsMedias.max991} {
             padding: 120px 0 55px 0;
+            background-image: url(${bgTokenmetric2});
         }
         .hp-title {
             position: absolute;

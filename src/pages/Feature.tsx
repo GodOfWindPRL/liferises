@@ -8,6 +8,8 @@ import { breakpointsMedias } from 'configs/breakpoints'
 import titleLeft2 from "assets/images/title-left-2.png"
 import titleRight2 from "assets/images/title-right-2.png"
 import frameFeature2 from "assets/images/frame-feature-2.png"
+import bgFeature from "assets/images/bg-feature.png"
+import bgFeature2 from "assets/images/bg-feature-2.png"
 
 const Feature = () => {
     const dataFeature = [{
@@ -56,6 +58,8 @@ const Wrap = styled.div`
     align-items: center;
     justify-content: center;
     padding: 144px 0 180px 0;
+    background-image: url(${bgFeature});
+    background-size: cover;
     .hp-title {
         position: absolute;
         top: 0;
@@ -163,6 +167,9 @@ const Wrap = styled.div`
         ${breakpointsMedias.max767} {
             padding: 70px 0 90px 0;
         }
+        ${breakpointsMedias.max550} {
+            background-image: url(${bgFeature2});
+        }
         .hp-title {
             position: absolute;
             top: 0;
@@ -227,9 +234,12 @@ const Wrap = styled.div`
                 }
                 ${breakpointsMedias.max767} {
                     width: 35vw;
-                    height: 45.5vw;
+                    height: 49.5vw;
                     margin: 0 2vw 30px 2vw;
-                    padding: 23% 20px 0 20px;
+                    padding: 25% 20px 0 20px;
+                    > img {
+                        top: 11%;
+                    }
                     &:last-child {
                         margin-right: 2vw;
                         margin: 0 2vw 30px 2vw;
@@ -238,10 +248,14 @@ const Wrap = styled.div`
                 ${breakpointsMedias.max550} {
                     width: 70vw;
                     max-width: 358px;
-                    height: 82vw;
+                    height: 81vw;
                     margin: 0 2vw 30px 2vw;
                     padding: 42% 20px 0 20px;
                     background-image: url(${frameFeature2});
+                    > img {
+                        top: 10%;
+                        width: 18%;
+                    }
                     &:last-child {
                         margin-right: 2vw;
                         margin: 0 2vw 30px 2vw;
