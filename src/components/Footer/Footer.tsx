@@ -39,9 +39,9 @@ const Footer = () => {
     return (
         <Wrap className=''>
             <div className='bg-footer'>
-                <img src={bgFooter} alt="" className='bg-desktop'/>
-                <img src={bgFire} alt="" className='bg-mobile-fire'/>
-                <img src={bgSword} alt="" className='bg-mobile-sword'/>
+                <img src={bgFooter} alt="" className='bg-desktop' />
+                <img src={bgFire} alt="" className='bg-mobile-fire' />
+                <img src={bgSword} alt="" className='bg-mobile-sword' />
             </div>
             <div className='bar-footer'>
                 <img src={barFooter} alt="" />
@@ -92,6 +92,7 @@ const Wrap = styled.div`
     height: 275px;
     position: relative;
     align-items: center;
+    background-color: #0C0C0C;
     .bg-footer {
         position: absolute;
         bottom: 0;
