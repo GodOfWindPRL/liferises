@@ -49,7 +49,7 @@ const Footer = () => {
             <div className="container">
                 <div className="footer-logo">
                     <Logo noMobile />
-                    <span className="size-0 color-gray">Copyright @2023 Life Rises The Beginning of the Metaverse. Life Rises The Beginning of the Metaverse is a product of Your Company Metaverse Studio Ltd.</span>
+                    <span className="size-0 color-gray">Copyright @2023 Life Rises The Beginning of the Metaverse.</span>
                 </div>
                 <div className={`footer-main`}>
                     <div className="fm-item">
@@ -143,6 +143,7 @@ const Wrap = styled.div`
             display: flex;
             text-align: center !important;
             color: #7C7676;
+            justify-content: center;
         }
         /* max-width: 387px; */
     }

@@ -16,7 +16,7 @@ import { breakpointsMedias } from 'configs/breakpoints'
 import YouTube from 'react-youtube'
 
 const About = () => {
-    const [muted, setMuted] = useState<boolean>(true);
+    // const [muted, setMuted] = useState<boolean>(true);
     const [showBt, setShowBt] = useState<boolean>(true);
     const playerRef = useRef<any>(null);
 
